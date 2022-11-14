@@ -10,7 +10,7 @@ func _on_EnemyDetector_body_entered(body: PhysicsBody2D) -> void:
 	
 	
 func _physics_process(delta: float) -> void:
-	var is_jump_interrupted: = Input.is_action_just_pressed("jump") and not is_on_floor()
+	var is_jump_interrupted: = Input.is_action_just_released("jump") and not is_on_floor()
 	var direction: = get_direction()
 	_velocity = calc_move_velocity(_velocity,direction,speed,is_jump_interrupted)
 	_velocity = move_and_slide(_velocity,FLOOR_NORMAL)
@@ -37,7 +37,6 @@ func calc_move_velocity(
 	
 
 func calc_stomp_velocity(velocity : Vector2 ,impulse : float) -> Vector2:
-	print("Hello")
 	var out: = velocity
 	out.y = -impulse
 	return out
