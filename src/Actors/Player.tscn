@@ -7,7 +7,7 @@
 extents = Vector2( 20, 22 )
 
 [sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 24, 22.2031 )
+extents = Vector2( 24, 1.99999 )
 
 [node name="Player" type="KinematicBody2D"]
 collision_mask = 8
@@ -41,7 +41,7 @@ collision_mask = 2
 [node name="CollisionShape2D" type="CollisionShape2D" parent="EnemyDetector"]
 modulate = Color( 1, 0, 0, 1 )
 light_mask = 2
-position = Vector2( -128, 1.79688 )
+position = Vector2( -128, 22 )
 shape = SubResource( 2 )
 
 [connection signal="area_entered" from="EnemyDetector" to="." method="_on_EnemyDetector_area_entered"]
