@@ -10,7 +10,7 @@ func _on_EnemyDetector_body_entered(body: PhysicsBody2D) -> void:
 	
 	
 func _physics_process(delta: float) -> void:
-	var is_jump_interrupted: = Input.is_action_just_released("jump") and not is_on_floor()
+	var is_jump_interrupted: = Input.is_action_just_released("jump") and not is_on_floor()   # uisng just_relesed we can make a effect like the player jumps accorifng to the amount of time jump button is pressed
 	var direction: = get_direction()
 	_velocity = calc_move_velocity(_velocity,direction,speed,is_jump_interrupted)
 	_velocity = move_and_slide(_velocity,FLOOR_NORMAL)
